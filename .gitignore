@@ -1,0 +1,14 @@
+# Local credentials and environment files
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+# Local data and original submission artifacts
+data/
+private/
+*.zip
+# OS/editor metadata
+.DS_Store
+__MACOSX/
+.vscode/
