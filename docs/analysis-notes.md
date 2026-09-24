@@ -6,7 +6,7 @@ The SQL was transcribed from pages 4–14 of the March 2026 MIE1628 Assignment 4
 
 ## Important interpretation limits
 
-- `total_earnings_male` and `total_earnings_female` are field names from the report. Their units and definitions are not available in the archive. Summing occupation-level averages or medians would not produce total payroll. Verify the data dictionary before describing these sums as money earned by all workers.
+- `total_earnings_male` and `total_earnings_female` are field names from the report. Their economic units and definitions are not documented in the supplied files. Summing occupation-level averages or medians would not produce total payroll. Verify the data dictionary before describing these sums as money earned by all workers.
 - Comparing aggregate male and female earnings fields does not control for occupation, hours worked, workforce composition, or other factors and is not an estimate of pay discrimination.
 - The final question refers to full-time and part-time workers, but its SQL only sums `workers_female` and `workers_male`. It does not split employment status. Whether those fields cover both statuses must be checked in the original dataset.
 - `LIKE '%engineer%'` includes any occupation containing that text, potentially including engineering technicians. It is not a validated classification of engineering professions.
@@ -23,4 +23,4 @@ The SQL was transcribed from pages 4–14 of the March 2026 MIE1628 Assignment 4
 
 ## Validation performed
 
-Ten SQL statements were extracted and compared with the report, covering the nine questions plus the distinct-occupation variant of question 1. No live Azure connection or source dataset was supplied, so database execution and numerical results have not been independently reproduced.
+Ten SQL statements were extracted and compared with the report, covering the nine questions plus the distinct-occupation variant of question 1. A source CSV was subsequently supplied. Worker-count results were independently reproduced in Python and matched the report. No live Azure connection was supplied, so database execution has not been repeated. See dataset-notes.md for file verification.

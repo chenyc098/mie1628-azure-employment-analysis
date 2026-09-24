@@ -7,7 +7,7 @@
 - An Azure SQL Database containing `dbo.genderdata`.
 - For reproducing ingestion, an Azure Storage source and an Azure Data Factory copy pipeline.
 
-The full original schema and pipeline export are absent. No schema or deployment template in this repository is represented as an original artifact.
+The CSV column list is documented in dataset-notes.md; the original SQL DDL and pipeline export are absent. No schema or deployment template in this repository is represented as an original artifact.
 
 ## Columns used by the analysis
 
@@ -22,7 +22,7 @@ The full original schema and pipeline export are absent. No schema or deployment
 | `total_earnings_female` | Female earnings field aggregation |
 | `total_earnings_male` | Male earnings field aggregation |
 
-The original table has additional columns, which are returned by SELECT *. These are not reconstructed from screenshots.
+The CSV has 12 columns; see dataset-notes.md for the complete list. SELECT * returns all columns present in the loaded SQL table.
 
 ## Workflow
 

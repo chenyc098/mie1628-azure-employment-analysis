@@ -30,6 +30,21 @@ flowchart LR
 
 The SQL file contains ten statements: the first question includes both full records and a distinct occupation list.
 
+## Verified dataset results
+
+![Female worker totals by year](assets/employment-trend.svg)
+
+The supplied CSV contains **2,088 records**, covering **522 occupation records in each year from 2013 through 2016**, with no duplicate year/occupation keys.
+
+| Year | Female workers in Management, Business, and Financial |
+| --- | ---: |
+| 2013 | 7,748,347 |
+| 2014 | 8,061,480 |
+| 2015 | 8,381,812 |
+| 2016 | 8,617,853 |
+
+There are **28 distinct occupations** in Business and Financial Operations, and **5,166,720 female workers** in the Management minor category in 2015. These values were independently recalculated from the CSV in Python and agree with the original report. They are sums of the supplied worker fields; earnings-field sums are not interpreted as total payroll.
+
 ## Repository contents
 
 | File | Purpose |
@@ -47,8 +62,8 @@ The SQL file contains ten statements: the first question includes both full reco
 
 ## Data and reproducibility status
 
-This repository was assembled from the submitted report and screenshots. The original dataset, source URL, full table definition, and exported Azure Data Factory configuration were not included in the supplied archive. Consequently, it is a documented coursework portfolio rather than a one-command deployment. No substitute dataset or fabricated results are included.
+The original report and screenshots document the Azure workflow. The subsequently supplied `gender_jobs_data.csv` was checked locally, and worker-count results were recalculated in Python. The SQL has not been rerun against a live Azure database.
 
-The report shows query executions against the coursework database. The extracted SQL has been checked against the report but has **not been re-executed** against a live database during repository preparation.
+The source publisher, data dictionary, license, and exported Azure Data Factory configuration are still unavailable. The raw CSV is not redistributed. See [dataset notes](docs/dataset-notes.md) for its schema, missing-value counts, and SHA-256 fingerprint, and [reproduction instructions](docs/reproduction.md) for the workflow.
 
-Original screenshots and the PDF are omitted from the public package because they contain account and cloud infrastructure details. The analysis does not establish a causal gender pay gap; earnings-field sums need the source data dictionary before economic interpretation.
+Original screenshots and the PDF are omitted because they contain account and infrastructure details. Earnings-field definitions must be confirmed before economic interpretation; this analysis does not establish a causal gender pay gap.
